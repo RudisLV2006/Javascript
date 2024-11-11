@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="number" id="number1" name="number1" />
+    <input type="number" id="number2" />
+    <button id="myBtn">Click</button>
+
+    <script>
+      document.getElementById("myBtn").addEventListener("click", number);
+      function number() {
+        const num1 = document.getElementById("number1").value;
+        const num2 = document.getElementById("number2").value;
+
+        // getElementById vs getElementByName
+        // Elemenet by name atgriež masīvu, kur nepieciešams atrast vērtību
+        // const num1Value = parseInt(num1.value, 10);
+        // const num2Value = parseInt(num2.value, 10);
+
+        const condition =
+          num1 < num2 || isNaN(num1) || isNaN(num2) ? true : false;
+
+        const para = document.createElement("p");
+
+        let node = document.createTextNode("");
+        // let node = 0;
+
+        if (condition) {
+          for (let i = num1; i <= num2; i++) {
+            // console.log(typeof i);
+            console.log(i);
+
+            node.nodeValue += i + " ";
+            // node.data += i + " ";
+            // node += i;
+          }
+        } else {
+          console.log("Invalid range: num1 must be less than num2");
+        }
+        console.log(node + "debug node");
+        console.log(node.data);
+        para.appendChild(node);
+        document.body.appendChild(para);
+
+        // Paraugs, ka tiek lietota metode byname un kas tiek izvadīts dažādos gadījumos
+        const num3 = document.getElementsByName("number1");
+
+        console.log(num3);
+
+        for (let index = 0; index < num3.length; index++) {
+          console.log(num3[index].value + 5);
+        }
+
+        for (let index = 0; index < num3.length; index++) {
+          console.log(parseInt(num3[index].value) + 5);
+        }
+      }
+    </script>
+  </body>
+</html>
