@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="field" />
+    <input type="button" value="Click" id="btn" />
+    <p id="para"></p>
+
+    <script>
+      const object = {
+        name: "Kristaps",
+        surname: "Karklins",
+        age: 18,
+        game: "Fortnite",
+        phone: "iphone",
+      };
+
+      document.getElementById("btn").addEventListener("click", enterPara);
+
+      function enterPara() {
+        const fieldValue = document.getElementById("field").value;
+        document.getElementById("para").textContent = object[fieldValue];
+        // document.getElementById("para").innerHTML = object[fieldValue];
+
+        console.log(document.getElementById("para").innerHTML);
+      }
+    </script>
+  </body>
+</html>
