@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="container"></div>
+    <script>
+      // 1. solis: izveido jaunu elementu
+      const newElement = document.createElement("div");
+
+      const newPara = document.createElement("p");
+      // 2. solis: iestata saturu vai atribūtus
+      newElement.textContent = "Sveika, pasaule!";
+      newElement.className = "new-class";
+
+      newPara.innerHTML += "test";
+      // 3. solis: pievieno DOM
+      document.body.appendChild(newElement);
+
+      const parentElement = document.getElementById("container");
+      document.body.insertAdjacentHTML("beforeend", "Jauns Elements");
+
+      // Pievieno sākumā
+      parentElement.prepend(newPara);
+
+      // Pievieno beigās
+      //   parentElement.append(newPara);
+
+      const container = document.getElementById("container");
+      container.innerHTML += "Pievienots ar innerHTML";
+    </script>
+  </body>
+</html>
