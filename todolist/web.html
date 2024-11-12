@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>To do list</h1>
+
+    <input type="text" id="task" />
+    <input type="button" value="enter" id="btn" />
+
+    <ul id="list"></ul>
+
+    <script>
+      document.getElementById("btn").addEventListener("click", createTask);
+      function createTask() {
+        const item = document.createElement("li");
+        const fieldValue = document.getElementById("task");
+        const deleteSpan = document.createElement("span");
+        deleteSpan.className = "delete";
+        deleteSpan.id = "delete";
+        deleteSpan.innerHTML = "x";
+        item.innerHTML = fieldValue.value;
+        item.innerHTML += " " + deleteSpan.outerHTML;
+        document.getElementById("list").appendChild(item);
+      }
+      document.getElementById("list").addEventListener("click", destroy);
+
+      function destroy(event) {
+        const item = event.target;
+        if (item && item.classList.contains("delete")) {
+            list.removeChild(item.parentElement);
+          //Nedaudz vieglāks
+          //   let index = item.closest("li");
+          //   index.remove();
+
+          //Pats atradu
+        }
+
+        // if(item && item.id && item.id.startsWith("delete-")){
+        //     const listItem = item.closest("li");
+        //     listItem.remove();
+        // }
+
+        //Nesaprotamais veids
+        // if (event.target && event.target.classList.contains("delete")) {
+        //   const item = event.target.closest("li");
+        //   item.remove();
+        // }
+      }
+    </script>
+  </body>
+</html>
+
+<!-- childNodes: NodeList [ #text, span.delete ]
+​​
+0: #text "sad "
+​​
+1: <span class="delete">
+​​
+length: 2 -->
