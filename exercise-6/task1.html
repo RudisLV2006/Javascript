@@ -6,11 +6,23 @@
     <title>Document</title>
   </head>
   <body>
+    <div id="container"></div>
     <script>
       const newElement = document.createElement("p");
       newElement.innerHTML = "Jauns paragrafs";
 
       document.body.appendChild(newElement) ;
+
+
+
+
+      const div = document.getElementById("container");
+
+      const para = document.createElement("p");
+      para.textContent = "Vēl viens paragrāfs";
+
+      div.insertAdjacentHTML("beforebegin", para.outerHTML);
+      //   div.insertAdjacentElement("beforeend", para);
     </script>
   </body>
 </html>
