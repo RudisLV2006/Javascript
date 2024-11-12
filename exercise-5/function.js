@@ -13,11 +13,17 @@ function summarize(num1,num2){
     return num1+num2;
 }
 function biggerNumber(num1,num2){
-    return Math.max(num1,num2);
+    if(num1>num2){
+        return(num1);
+    }else{
+        return(num2);
+    }
+
+    // return Math.max(num1,num2);
 }
 
 
-console.log(biggerNumber(2,9));
+console.log(biggerNumber(11,5));
 
 
 const myName = returnName();
