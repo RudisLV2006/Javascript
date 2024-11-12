@@ -7,6 +7,7 @@
   </head>
   <body>
     <div id="container"></div>
+    <div id="content"></div>
 
     <ul id="list">
       <li>test</li>
@@ -15,24 +16,36 @@
     </ul>
 
     <script>
+      //task1
       const newElement = document.createElement("p");
       newElement.innerHTML = "Jauns paragrafs";
 
-      document.body.appendChild(newElement);
-
+      document.body.appendChild(newElement); //task1
+      //task2
       const div = document.getElementById("container");
 
-      const para = document.createElement("p");
+      let para = document.createElement("p");
       para.textContent = "Vēl viens paragrāfs";
 
-      div.insertAdjacentHTML("beforebegin", para.outerHTML);
+      div.insertAdjacentHTML("beforebegin", para.outerHTML); //task2
       //   div.insertAdjacentElement("beforeend", para);
 
+      //task3
       const list = document.getElementById("list");
 
       const newListItem = document.createElement("li");
       newListItem.innerHTML = "maintain";
-      list.prepend(newListItem);
+      list.prepend(newListItem); //task3
+      //task4
+      const content = document.getElementById("content");
+
+      const heading = document.createElement("h2");
+      heading.innerHTML = "Virsraksts";
+      para = document.createElement("p");
+      para.innerHTML = "Šis ir teksts";
+
+      content.innerHTML += heading.outerHTML;
+      content.innerHTML += para.outerHTML; //task4
     </script>
   </body>
 </html>
