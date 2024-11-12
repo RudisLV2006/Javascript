@@ -13,17 +13,19 @@ function summarize(num1,num2){
     return num1+num2;
 }
 function biggerNumber(num1,num2){
-    if(num1>num2){
-        return(num1);
-    }else{
-        return(num2);
-    }
+    // if(num1>num2){
+    //     return(num1);
+    // }else{
+    //     return(num2);
+    // }
+
+    return num1>num2 ? num1:num2;
 
     // return Math.max(num1,num2);
 }
 
 
-console.log(biggerNumber(11,5));
+console.log(biggerNumber(5,9));
 
 
 const myName = returnName();
